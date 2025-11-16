@@ -74,8 +74,15 @@ WSGI_APPLICATION = 'gms_pro_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 1. Change the Engine from sqlite3 to postgresql
+        'ENGINE': 'django.db.backends.postgresql',
+        
+        # 2. Add your custom database connection details
+        'NAME': 'gms_pro_db', 
+        'USER': 'postgres', # Your PostgreSQL admin username
+        'PASSWORD': '#Suji#18', # <--- REPLACE THIS WITH YOUR PASSWORD
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
